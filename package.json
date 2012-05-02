@@ -1,0 +1,30 @@
+{
+	"name": "roto",
+	"description": "A no-nonsense build tool for Node.js projects.",
+	"keywords": ["build","cli","make","rake"],
+	"version": "0.0.1",
+	"author": "Brian Reavis <brian@diy.org> (http://diy.org)",
+	"bin": {
+		"roto": "./bin/cli.js"
+	},
+	"main": "./lib/roto.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/diy/roto.git"
+	},
+	"preferGlobal": true,
+	"dependencies": {
+		"commander": "=0.6.0",
+		"underscore": "=1.3.3",
+		"glob": "=3.1.9",
+		"jshint": "=0.6.1",
+		"uglify-js": "=1.2.6",
+		"bunyan": "=0.6.8",
+		"knox": "=0.0.9",
+		"handlebars": "1.0.5beta"
+	},
+	"devDependencies": {},
+	"engines": {
+		"node": "*"
+	}
+}
