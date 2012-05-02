@@ -2,7 +2,7 @@
 
 #### A no-nonsense build tool for Node.js projects.
 
-Roto is designed to be a lean build tool. Build targets are defined as functions. Inside of which, you simply add tasks that are executed *sequentally*. 
+Roto is designed to be a lean build tool. Build targets are defined as functions. Inside of which, simply add tasks that are executed *sequentally*. 
 
 **To install**: `npm install -g roto`
    
@@ -68,9 +68,15 @@ roto.addTask(function() {
 
 ### Defining Reusable Tasks
 
-For defining custom tasks that can be reused (like the predefined ones that come bundled with roto), use `roto.defineTask(name, function(options, target, globalOptions) { ... });`. The arguments provided to the callback are:
+For defining custom tasks that can be reused (like the predefined ones that come bundled with roto), use: 
 
-* `options` — User-provided options (given when calling `roto.addTask`).
+```javascript
+roto.defineTask(name, function(options, target, globalOptions) { ... });
+```
+
+The arguments provided to the callback are:
+
+* `options` — User-provided options that are given when calling `roto.addTask`.
 * `target` — Information about the target currently being executed `{ name: 'target-name', tasks: [...] }`.
 * `globalOptions` — Options provided at the command line, or when calling `roto.run`.
 
