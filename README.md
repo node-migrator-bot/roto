@@ -2,7 +2,7 @@
 
 #### A no-nonsense build tool for Node.js projects.
 
-Roto is designed to be a lean build tool. Build targets are defined as functions---which can add tasks that are executed *sequentally*.
+Roto is designed to be a lean build tool. Build targets are defined as functions—which can add tasks that are executed *sequentally*.
 
 **To install**: `npm install -g roto`
    
@@ -10,10 +10,10 @@ Roto is designed to be a lean build tool. Build targets are defined as functions
 
 A few common, useful tasks come built-in to roto.
 
-* [**concat**](#) --- File concatenation.
-* [**handlebars**](#) --- [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
-* [**lint**](#) --- Javascript source validation (using [jshint](https://github.com/jshint/jshint/)).
-* [**uglify**](#) --- Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
+* [**concat**](#) — File concatenation.
+* [**handlebars**](#) — [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
+* [**lint**](#) — Javascript source validation (using [jshint](https://github.com/jshint/jshint/)).
+* [**uglify**](#) — Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
 
 ## Setting up a Project
 
