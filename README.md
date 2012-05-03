@@ -2,7 +2,7 @@
 
 #### A no-nonsense build tool for Node.js projects.
 
-Roto is designed to be a lean build tool. Build targets are defined as functions. Inside of which, simply add tasks that are executed *sequentally*. 
+Roto is designed to be a lean build tool. Build targets are defined as functions. Inside of which, simply add tasks that are executed *sequentally*. Roto is in its very early stages—use it with some caution.
 
 **To install**: `npm install -g roto`
    
@@ -65,6 +65,30 @@ roto.addTask(function() {
 	// logic goes here
 });
 ```
+
+## Odds & Ends
+
+### Console Output
+
+Two methods are provided for writing to the console: `roto.notice` and `roto.error`. **Note:** neither of these methods add line breaks to the end of your string like `console.log`, so don't forget them if you want them.
+
+```javascript
+roto.notice('Yo\n');
+roto.error('Something borked.\n');
+```
+
+#### Colorizing Strings
+
+A utility for colorizing strings comes bundled with roto.
+
+```javascript
+var colorize = require('./path/to/colorize.js');
+
+roto.error(colorize('ERROR:', 'red') + ' Something borked.');
+roto.error(colorize('SUCCESS:', 'green') + ' Something went right!');
+```
+
+The available colors are currently: `red`, `yellow`, `green`, and `white` (bold).
 
 ### Defining Reusable Tasks
 
