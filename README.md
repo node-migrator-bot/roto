@@ -84,7 +84,10 @@ A utility for colorizing strings comes bundled with roto.
 ```javascript
 var colorize = require('./path/to/colorize.js');
 
+// (writes to process.stdout)
 roto.error(colorize('ERROR:', 'red') + ' Something borked.');
+
+// (writes to process.stderr)
 roto.error(colorize('SUCCESS:', 'green') + ' Something went right!');
 ```
 
