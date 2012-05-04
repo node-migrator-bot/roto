@@ -8,7 +8,7 @@ Concatenates multiple files into a single file.
 <table>
 	<tr>
 		<th>Option</th>
-		<th style="width:220px">Type</th>
+		<th width="220px">Type</th>
 		<th>Comment</th>
 	</tr>
 	<tr>

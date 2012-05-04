@@ -16,7 +16,7 @@ var output = Handlebars.templates['comment']({
 <table>
 	<tr>
 		<th>Option</th>
-		<th style="width:220px">Type</th>
+		<th width="220px">Type</th>
 		<th>Comment</th>
 	</tr>
 	<tr>
