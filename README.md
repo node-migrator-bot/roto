@@ -13,7 +13,7 @@ A few common, useful tasks come built-in to roto.
 * [**concat**](#) — File concatenation.
 * [**handlebars**](#) — [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
 * [**lint**](#) — Javascript source validation (using [jshint](https://github.com/jshint/jshint/)).
-* [**uglify**](#) — Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
+* [**uglify**](/diy/roto/blob/master/docs/task_uglify.md) — Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
 
 ## Setting up a Project
 
@@ -38,7 +38,7 @@ module.exports = function(roto) {
 };
 ```
 
-To set the **default target** that is used, set `roto.defaultTarget`. If left unchanged, **all** targets are built.
+To set the **default target** that is used (should one not be given at build time), set `roto.defaultTarget`. If left unchanged, **all** targets are built.
 
 ```javascript
 roto.defaultTarget = 'target-name';
@@ -46,7 +46,7 @@ roto.defaultTarget = 'target-name';
 
 ### Adding Predefined Tasks
 
-To invoke a predefined task as part of your build process, use `roto.addTask(name, options)`—where `name` is the name of the predefined task.
+To invoke a predefined task as part of your build process, use `roto.addTask(name, options)`—where `name` is the name of the predefined task. For `options`, consult the documentation for that task ([located here](#bundled-tasks)).
 
 ```javascript
 roto.addTask('uglify', {
