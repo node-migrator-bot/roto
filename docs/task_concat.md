@@ -1,6 +1,6 @@
-# uglify (bundled task)
+# concat (bundled task)
 
-Minification of client-side javascript is a breeze with the built-in `uglify` task. It takes one or more files, concatenates them, and minifies them down to a single file.
+Concatenates multiple files into a single file.
 
 ## Options
 
@@ -14,7 +14,7 @@ Minification of client-side javascript is a breeze with the built-in `uglify` ta
 	<tr>
 		<td><code>files</code></td>
 		<td><code>string</code> (or <code>array</code> of strings)</td>
-		<td>Paths of JS files to be minified. Supports basic wildcards / <a href="http://www.linuxjournal.com/content/bash-extended-globbing" target="_blank">glob syntax</a>.</td>
+		<td>Paths of files to be concatenated. Supports basic wildcards / <a href="http://www.linuxjournal.com/content/bash-extended-globbing" target="_blank">glob syntax</a>.</td>
 	</tr>
 	<tr>
 		<td><code>ignore</code></td>
@@ -32,18 +32,18 @@ Minification of client-side javascript is a breeze with the built-in `uglify` ta
 
 ```javascript
 {
-	files  : ['file.js', 'js/*.js']
-	ignore : ['*.min.js'],
-	output : 'output.min.js'
+	files  : 'css/*.css'
+	ignore : 'css/lib.css',
+	output : 'css/merged.css'
 }
 ```
 
 ## Examples
 
 ```javascript
-roto.addTask('uglify', {
-	files  : ['jquery.js', 'underscore.js']
-	ignore : 'mysite.js',
-	output : 'lib.js'
+roto.addTask('concat', {
+	files  : 'css/*.css'
+	ignore : 'css/lib.css',
+	output : 'css/merged.css'
 });
 ```

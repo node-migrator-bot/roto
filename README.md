@@ -10,8 +10,8 @@ Roto is designed to be a lean build tool. Build targets are defined as functions
 
 A few common, useful tasks come built-in to roto.
 
-* [**concat**](#) — File concatenation.
-* [**handlebars**](#) — [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
+* [**concat**](/diy/roto/blob/master/docs/task_concat.md) — File concatenation.
+* [**handlebars**](/diy/roto/blob/master/docs/task_handlebars.md) — [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
 * [**lint**](#) — Javascript source validation (using [jshint](https://github.com/jshint/jshint/)).
 * [**uglify**](/diy/roto/blob/master/docs/task_uglify.md) — Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
 
