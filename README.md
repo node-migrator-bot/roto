@@ -70,7 +70,7 @@ roto.addTask(function() {
 
 ### Console Output
 
-Two methods are provided for writing to the console: `roto.notice` and `roto.error`. **Note:** neither of these methods add line breaks to the end of your string like `console.log`, so don't forget them if you want them.
+Two methods are provided for writing to the console: `roto.notice` and `roto.error`. **Note:** neither of these methods add line breaks to the end of your string like `console.log` does, so don't forget them if you want them.
 
 ```javascript
 // (writes to process.stdout)
@@ -87,7 +87,7 @@ A utility for colorizing strings comes bundled with roto.
 var colorize = require('./path/to/colorize.js');
 
 roto.error(colorize('ERROR:', 'red') + ' Something borked.');
-roto.error(colorize('SUCCESS:', 'green') + ' Something went right!');
+roto.notice(colorize('SUCCESS:', 'green') + ' Something went right!');
 ```
 
 The available colors are currently: `red`, `yellow`, `green`, and `white` (bold).
