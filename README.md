@@ -31,8 +31,9 @@ module.exports = function(roto) {
 		});
 			
 		// do something custom
-		roto.addTask(function() {
+		roto.addTask(function(callback) {
 			roto.notice('This isn\'t using a predefined task. Saweet.');
+			callback();
 		});
 	});
 };
@@ -61,8 +62,9 @@ roto.addTask('uglify', {
 If there's something specific you need to do that doesn't have to do with a predefined task, simply use `roto.addTask(callback)`:
 
 ```javascript
-roto.addTask(function() {
+roto.addTask(function(callback) {
 	// logic goes here
+	callback();
 });
 ```
 
@@ -97,11 +99,15 @@ The available colors are currently: `red`, `yellow`, `green`, and `white` (bold)
 For defining custom tasks that can be reused (like the predefined ones that come bundled with roto), use: 
 
 ```javascript
-roto.defineTask(name, function(options, target, globalOptions) { ... });
+roto.defineTask(name, function(callback, options, target, globalOptions) {
+	// logic goes here
+	callback();
+});
 ```
 
 The arguments provided to the callback are:
 
+* `callback` – Invoke to move on to the next task. This is crucial (otherwise your build will hang).
 * `options` — User-provided options that are given when calling `roto.addTask`.
 * `target` — Information about the target currently being executed `{ name: 'target-name', tasks: [...] }`.
 * `globalOptions` — Options provided at the command line, or when calling `roto.run`.
@@ -113,7 +119,9 @@ The arguments provided to the callback are:
 ```javascript
 var roto = require('roto');
 require('./build.js')(roto);
-roto.run('target-name');
+roto.run('target-name', {}, function() {
+	console.log('Build complete!');
+});
 ```
 
 ### Command Line
