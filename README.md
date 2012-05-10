@@ -14,6 +14,7 @@ A few common, useful tasks come built-in to roto.
 * [**handlebars**](/diy/roto/blob/master/docs/task_handlebars.md) — [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
 * [**lint**](#) — Javascript source validation (using [jshint](https://github.com/jshint/jshint/)).
 * [**uglify**](/diy/roto/blob/master/docs/task_uglify.md) — Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
+* [**mocha**](/diy/roto/blob/master/docs/task_mocha.md) — Testing framework (using [mocha](http://visionmedia.github.com/mocha/)).
 
 ## Setting up a Project
 
@@ -22,7 +23,6 @@ Create a `build.js` file in your project root. This is where you'll define all y
 ```javascript
 module.exports = function(roto) {
 	roto.addTarget('www', function() {
-			
 		// minify js files
 		roto.addTask('uglify', {
 			files  : ['js/*.js'],
@@ -119,7 +119,14 @@ The arguments provided to the callback are:
 ```javascript
 var roto = require('roto');
 require('./build.js')(roto);
+
+// build a single target
 roto.run('target-name', {}, function() {
+	console.log('Build complete!');
+});
+
+// build a few targets
+roto.run(['target-name', 'whatevs'], {}, function() {
 	console.log('Build complete!');
 });
 ```
