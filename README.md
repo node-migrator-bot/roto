@@ -81,12 +81,14 @@ roto.notice('Yo\n');
 roto.error('Something borked.\n');
 ```
 
+An optional second argument is `color` (described below).
+
 #### Colorizing Strings
 
 A utility for colorizing strings comes bundled with roto.
 
 ```javascript
-var colorize = require('./path/to/colorize.js');
+var colorize = roto.colorize;
 
 roto.error(colorize('ERROR:', 'red') + ' Something borked.');
 roto.notice(colorize('SUCCESS:', 'green') + ' Something went right!');
