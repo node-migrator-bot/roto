@@ -2,7 +2,7 @@
 	"name": "roto",
 	"description": "A no-nonsense build tool for Node.js projects.",
 	"keywords": ["build","cli","make","rake"],
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"author": "Brian Reavis <brian@diy.org> (https://diy.org)",
 	"bin": {
 		"roto": "./bin/cli.js"
