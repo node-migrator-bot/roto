@@ -1,6 +1,6 @@
 # s3 (bundled task)
 
-Syncing a folder on S3 is really easy using the `s3` task. Provide it with S3 credentials and the path of a local folder, and it will upload the contents to S3. It maintains a remote manifest of files and their checksums so that later syncs won't have to upload data that hasn't changed (ala git / dropbox).
+Syncing a folder to S3 is really easy using the `s3` task. Provide the task with S3 credentials and the path of a local folder, and it will transfer the contents to S3. It maintains a remote manifest of files and their checksums so that later sync operations won't have to upload files that haven't changed (ala git / dropbox).
 
 ## Options
 
