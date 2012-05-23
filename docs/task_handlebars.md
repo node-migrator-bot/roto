@@ -36,15 +36,6 @@ var output = Handlebars.templates['comment']({
 	</tr>
 </table>
 
-### Sample:
-
-```javascript
-{
-	files  : ['views/*.html']
-	output : 'views.js'
-}
-```
-
 ## Examples
 
 ```javascript

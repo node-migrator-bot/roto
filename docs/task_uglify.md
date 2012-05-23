@@ -28,16 +28,6 @@ Minification of client-side javascript is a breeze with the built-in `uglify` ta
 	</tr>
 </table>
 
-### Sample:
-
-```javascript
-{
-	files  : ['file.js', 'js/*.js']
-	ignore : ['*.min.js'],
-	output : 'output.min.js'
-}
-```
-
 ## Examples
 
 ```javascript

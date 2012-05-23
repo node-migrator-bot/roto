@@ -28,16 +28,6 @@ Concatenates multiple files into a single file.
 	</tr>
 </table>
 
-### Sample:
-
-```javascript
-{
-	files  : 'css/*.css'
-	ignore : 'css/lib.css',
-	output : 'css/merged.css'
-}
-```
-
 ## Examples
 
 ```javascript

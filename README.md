@@ -10,12 +10,12 @@ Roto is designed to be a lean build tool. Build targets are defined as functions
 
 A few common, useful tasks come built-in to roto.
 
-* [**s3**](/diy/roto/blob/master/docs/task_s3.md) — Sync a folder to S3.
-* [**concat**](/diy/roto/blob/master/docs/task_concat.md) — File concatenation.
-* [**handlebars**](/diy/roto/blob/master/docs/task_handlebars.md) — [Handlebars](http://handlebarsjs.com/) template precompilation to JS.
-* [**lint**](#) — Javascript source validation (using [jshint](https://github.com/jshint/jshint/)).
-* [**uglify**](/diy/roto/blob/master/docs/task_uglify.md) — Javascript minification (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
-* [**mocha**](/diy/roto/blob/master/docs/task_mocha.md) — Testing framework (using [mocha](http://visionmedia.github.com/mocha/)).
+* [**s3**](/diy/roto/blob/master/docs/task_s3.md) — Syncs a local folder to S3.
+* [**concat**](/diy/roto/blob/master/docs/task_concat.md) — Concatenates two or more files.
+* [**handlebars**](/diy/roto/blob/master/docs/task_handlebars.md) — Precompiles [Handlebars](http://handlebarsjs.com/) templates to JS.
+* [**lint**](#) — Validates Javascript source code (using [jshint](https://github.com/jshint/jshint/)).
+* [**uglify**](/diy/roto/blob/master/docs/task_uglify.md) — Minifies Javascript source code (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
+* [**mocha**](/diy/roto/blob/master/docs/task_mocha.md) — Performs unit tests (using [mocha](http://visionmedia.github.com/mocha/)).
 
 ## Setting up a Project
 
