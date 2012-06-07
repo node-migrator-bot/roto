@@ -146,9 +146,11 @@ roto.run(['target-name', 'whatevs'], {}, function() {
 
     roto target [options]
 
+#### Options
+
 Options can be provided in a variety of ways:
 
-	roto target debug --message=hello -x 1 -y 2 a
+	roto target debug --message=hello -x 1 -y 2
 
 This leads to `options` being:
 
