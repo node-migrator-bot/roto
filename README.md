@@ -23,7 +23,7 @@ Create a `build.js` file in your project root. This is where you'll define all y
 
 ```javascript
 module.exports = function(roto) {
-	roto.addTarget('www', function() {
+	roto.addTarget('www', function(options) {
 		// minify js files
 		roto.addTask('uglify', {
 			files  : ['js/*.js'],
@@ -74,7 +74,7 @@ roto.addTask(function(callback) {
 In some cases, executing another target from the current target makes sense (e.g. a `deploy` target needing to run the `clientside-build` target first). To do this, use the following syntax:
 
 ```javascript
-roto.addTask('target:clientside-build', { /* global options */ });
+roto.addTask('target:clientside-build', options);
 ```
 
 ## Odds & Ends
@@ -143,4 +143,20 @@ roto.run(['target-name', 'whatevs'], {}, function() {
 ```
 
 ### Command Line
-    roto target-name
+
+    roto target [options]
+
+Options can be provided in a variety of ways:
+
+	roto target debug --message=hello -x 1 -y 2 a
+
+This leads to `options` being:
+
+```javascript
+{
+	debug: true,
+	message: 'hello',
+	x: 1,
+	y: 2
+}
+```
