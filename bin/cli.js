@@ -20,7 +20,7 @@
 var path     = require('path'),
     fs       = require('fs'),
     roto     = require('../lib/roto.js'),
-	optimist = require('optimist'),
+    optimist = require('optimist'),
     pkg      = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
 var argv = optimist.usage('Usage: $0 [target] [options]').argv;
