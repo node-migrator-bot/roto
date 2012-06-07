@@ -17,13 +17,36 @@
  * @author Brian Reavis <brian@diy.org>
  */
 
-var program  = require('commander'),
-    path     = require('path'),
+var path     = require('path'),
     fs       = require('fs'),
     roto     = require('../lib/roto.js'),
+	optimist = require('optimist'),
     pkg      = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
-// load the project
+var argv = optimist.usage('Usage: $0 [target] [options]').argv;
+	
+// selected build target
+// ------------------------------------------------------------------------------------
+
+var target = argv._.length ? argv._[0] : 'all';
+
+// extract global options
+// ------------------------------------------------------------------------------------
+
+var blacklist = ['_', '$0'];
+var options = {};
+for (var key in argv) {
+	if (argv.hasOwnProperty(key) && blacklist.indexOf(key) === -1) {
+		options[key] = argv[key];
+	}
+}
+for (var i = 1; i < argv._.length; i++) {
+	options[argv._[i]] = true;
+}
+
+// load project information
+// ------------------------------------------------------------------------------------
+
 var projectFile = process.cwd() + '/build.js';
 if (!path.existsSync(projectFile)) {
 	process.stderr.write('"build.js" project file not found.\n');
@@ -31,24 +54,16 @@ if (!path.existsSync(projectFile)) {
 }
 
 require(projectFile)(roto);
-var buildTarget = function(target) {
-	roto.run(target, {});
-};
 
-// setup the cli
-program.version(pkg.version);
-program.usage('<target> [options]');
+// display help
+// ------------------------------------------------------------------------------------
 
-program
-	.command('*')
-	.description('Build the given target')
-	.action(buildTarget);
-
-program.on('--help', function() {
-	process.stdout.write('   Available Targets:\n\n');
+if (options['help']) {
+	process.stdout.write(optimist.help());
+	process.stdout.write('Available Targets:\n\n');
 	
 	// all
-	process.stdout.write('   all');
+	process.stdout.write('   - all');
 	if ('all' === roto.defaultTarget) {
 		process.stdout.write(' (default)');
 	}
@@ -57,7 +72,7 @@ program.on('--help', function() {
 	// defined targets
 	for (var key in roto._project.targets) {
 		if (roto._project.targets.hasOwnProperty(key)) {
-			process.stdout.write('   ' + roto._project.targets[key].name);
+			process.stdout.write('   - ' + roto._project.targets[key].name);
 			if (key === roto.defaultTarget) {
 				process.stdout.write(' (default)');
 			}
@@ -65,10 +80,11 @@ program.on('--help', function() {
 		}
 	}
 	process.stdout.write('\n');
-});
-
-program.parse(process.argv);
-
-if (process.argv.length === 2) {
-	buildTarget('all');
+	
+	return;
 }
+
+// execute build
+// ------------------------------------------------------------------------------------
+
+roto.run(target, options);
