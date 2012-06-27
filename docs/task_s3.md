@@ -46,6 +46,11 @@ Syncing a folder to S3 is really easy using the `s3` task. Provide the task with
 		<td valign="top">Any headers to apply to all files.</td>
 	</tr>
 	<tr>
+		<td valign="top"><code>gzip</code></td>
+		<td valign="top"><code>bool</code></td>
+		<td valign="top">If true, each file will also have a gzipped version uploaded. For example, if you have "script.js", the gzipped version will exist at "script.gz.js". Default: false.</td>
+	</tr>
+	<tr>
 		<td valign="top"><code>bucket</code></td>
 		<td valign="top"><code>string</code></td>
 		<td valign="top">The name of the S3 bucket to use.</td>
