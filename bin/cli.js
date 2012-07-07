@@ -48,7 +48,7 @@ for (var i = 1; i < argv._.length; i++) {
 // ------------------------------------------------------------------------------------
 
 var projectFile = process.cwd() + '/build.js';
-if (!path.existsSync(projectFile)) {
+if (!fs.existsSync(projectFile)) {
 	process.stderr.write('"build.js" project file not found.\n');
 	process.exit(1);
 }
