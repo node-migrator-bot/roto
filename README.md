@@ -15,7 +15,7 @@ A few common, useful tasks come built-in to roto.
 * [**handlebars**](/diy/roto/blob/master/docs/task_handlebars.md) — Precompiles [Handlebars](http://handlebarsjs.com/) templates to JS.
 * [**lint**](#) — Validates Javascript source code (using [jshint](https://github.com/jshint/jshint/)).
 * [**uglify**](/diy/roto/blob/master/docs/task_uglify.md) — Minifies Javascript source code (using [uglifyjs](https://github.com/mishoo/UglifyJS)).
-* [**mocha**](/diy/roto/blob/master/docs/task_mocha.md) — Performs unit tests (using [mocha](http://visionmedia.github.com/mocha/)).
+* [**mocha**](/diy/roto/blob/master/docs/task_mocha.md) — Performs unit tests (using [mocha](https://mochajs.org/)).
 
 ## Setting up a Project
 
